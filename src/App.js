@@ -3,6 +3,7 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Book from './components/Book/Book'
 import BooksGrid from './components/BooksGrid/BooksGrid'
+import BookShelf from './components/BookShelf/BookShelf'
 
 class BooksApp extends Component {
   state = {
@@ -26,6 +27,12 @@ class BooksApp extends Component {
   };
 
   render() {
+    const shelves = [
+      'Currently Reading',
+      'Want to Read',
+      'Read'
+    ];
+
     return (
       <div className="app">
         {this.state.showSearchPage ? (
@@ -56,24 +63,12 @@ class BooksApp extends Component {
             </div>
             <div className="list-books-content">
               <div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading</h2>
-                  <div className="bookshelf-books">
-                    <BooksGrid books={this.state.books} shelf="Currently Reading" />
-                  </div>
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Want to Read</h2>
-                  <div className="bookshelf-books">
-                    <BooksGrid books={this.state.books} shelf="Want to Read" />
-                  </div>
-                </div>
-                <div className="bookshelf">
-                  <h2 className="bookshelf-title">Read</h2>
-                  <div className="bookshelf-books">
-                    <BooksGrid books={this.state.books} shelf="Read" />
-                  </div>
-                </div>
+                { shelves.map( shelf => (
+                  <BookShelf key={ shelf }
+                             title={ shelf }
+                             books={ filterBooksByShelf.call(this, shelf) }
+                  />
+                ) ) }
               </div>
             </div>
             <div className="open-search">
@@ -84,6 +79,10 @@ class BooksApp extends Component {
       </div>
     )
   }
+}
+
+function filterBooksByShelf(shelf) {
+  return this.state.books.filter(book => book.shelf === shelf);
 }
 
 export default BooksApp

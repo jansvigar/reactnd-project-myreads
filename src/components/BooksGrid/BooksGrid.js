@@ -35,7 +35,7 @@ BooksGrid.defaultProps = {
 };
 
 /**
-* @description Check if a book match search query or shelf type
+* @description Check if a book match search query
 * @param {object} book
 * @returns {boolean}
 */
