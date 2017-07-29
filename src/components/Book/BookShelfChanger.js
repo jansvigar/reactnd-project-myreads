@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookShelfChanger = props => (
+const BookShelfChanger = () => (
   <div className="book-shelf-changer">
     <select>
       <option value="none" disabled>Move to...</option>
@@ -12,4 +12,4 @@ const BookShelfChanger = props => (
   </div>
 )
 
-export default BookShelfChanger
+export default BookShelfChanger;
