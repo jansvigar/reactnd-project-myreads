@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Book from './components/Book/Book'
+import BooksGrid from './components/BooksGrid/BooksGrid'
 
 class BooksApp extends Component {
   state = {
@@ -19,7 +20,8 @@ class BooksApp extends Component {
       id: '1',
       title: 'The Hobbit',
       author: 'J.R.R. Tolkien',
-      backgroundImageUrl: 'http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api'
+      backgroundImageUrl: 'http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api',
+      shelf: 'Currently Reading'
     }]
   };
 
@@ -57,52 +59,19 @@ class BooksApp extends Component {
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
-                    <ol className="books-grid">
-
-                      {
-                      /** TODO: Don't forget to update this map method to filter.
-                        * The filter should be based off of the bookshelf title/type
-                      */
-                        this.state.books.map(book => (
-                        <li key={ book.id }>
-                          <Book book={ book } />
-                        </li>
-                      ))}
-                    </ol>
+                    <BooksGrid books={this.state.books} shelf="Currently Reading" />
                   </div>
                 </div>
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
                   <div className="bookshelf-books">
-                    <ol className="books-grid">
-
-                    {
-                      /** TODO: Don't forget to update this map method to filter.
-                        * The filter should be based off of the bookshelf title/type
-                      */
-                      this.state.books.map(book => (
-                      <li key={ book.id }>
-                        <Book book={ book } />
-                      </li>
-                    ))}
-                    </ol>
+                    <BooksGrid books={this.state.books} shelf="Want to Read" />
                   </div>
                 </div>
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Read</h2>
                   <div className="bookshelf-books">
-                    <ol className="books-grid">
-
-                    {
-                      /** TODO: Don't forget to update this map method to filter.
-                        * The filter should be based off of the bookshelf title/type
-                      */
-                      this.state.books.map(book => (
-                      <li key={ book.id }>
-                        <Book book={ book } />
-                      </li>
-                    ))}
-                    </ol>
+                    <BooksGrid books={this.state.books} shelf="Read" />
                   </div>
                 </div>
               </div>
