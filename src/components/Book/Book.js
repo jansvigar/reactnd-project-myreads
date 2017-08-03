@@ -7,7 +7,7 @@ const Book = props => {
   const bookCoverStyles = {
     width: 128,
     height: 193,
-    backgroundImage: `url(${props.book.backgroundImageUrl})`
+    backgroundImage: `url(${props.book.imageLinks.thumbnail})`
   };
 
   return (
@@ -17,16 +17,18 @@ const Book = props => {
         <BookShelfChanger />
       </div>
       <div className="book-title">{ props.book.title }</div>
-      <div className="book-authors">{ props.book.author }</div>
+      <div className="book-authors">
+        { props.book.authors.reduce((acc, cur) => `${acc}, ${cur}`) }
+      </div>
     </div>
   );
 }
 
 Book.propTypes = {
   book: PropTypes.shape ({
-    backgroundImageUrl: PropTypes.string.isRequired,
+    imageLinks: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired
+    authors: PropTypes.array.isRequired
   })
 };
 

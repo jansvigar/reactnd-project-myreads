@@ -20,7 +20,7 @@ const ListBooks = props => {
           { shelves.map( shelf => (
             <BookShelf key={ shelf }
                        title={ shelf }
-                       books={ props.books.filter(book => book.shelf === shelf) }
+                       books={ props.books.filter(book => book.shelf === camelCase(shelf)) }
             />
           )) }
         </div>
@@ -35,6 +35,14 @@ const ListBooks = props => {
 ListBooks.propTypes = {
   books: PropTypes.array.isRequired,
   onOpenSearch: PropTypes.func.isRequired
+}
+
+function camelCase(str) {
+  return str.trim()
+            .toLowerCase()
+            .replace(/\W+(.)/g, function(match, char){
+              return char.toUpperCase();
+            });
 }
 
 export default ListBooks

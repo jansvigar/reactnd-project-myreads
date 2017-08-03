@@ -16,18 +16,19 @@ class BooksApp extends Component {
     /**
     * TODO: Don't forget to empty this books state. Hardcoded the object to test book component.
     */
-    books: [{
-      id: '1',
-      title: 'The Hobbit',
-      author: 'J.R.R. Tolkien',
-      backgroundImageUrl: 'http://books.google.com/books/content?id=pD6arNyKyi8C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Rw0CCwNZh0SsYpQTkMbvz23npqWeUoJvVbi_gXla2m2ie_ReMWPl0xoU8Quy9fk0Zhb3szmwe8cTe4k7DAbfQ45FEzr9T7Lk0XhVpEPBvwUAztOBJ6Y0QPZylo4VbB7K5iRSk&source=gbs_api',
-      shelf: 'Currently Reading'
-    }]
+    books: []
   };
+
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      console.log(books);
+      this.setState({ books });
+    });
+  }
 
   updateShowSearchPage = (showSearchPage) => {
     this.setState({ showSearchPage });
-  }
+  };
 
   render() {
     return (
@@ -39,7 +40,7 @@ class BooksApp extends Component {
         )}
       </div>
     )
-  }
+  };
 }
 
 export default BooksApp
