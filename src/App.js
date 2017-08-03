@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import Book from './components/Book/Book'
-import BooksGrid from './components/BooksGrid/BooksGrid'
-import BookShelf from './components/BookShelf/BookShelf'
 import SearchBooks from './components/SearchBooks/SearchBooks'
+import ListBooks from './components/ListBooks/ListBooks'
 
 class BooksApp extends Component {
   state = {
@@ -32,43 +30,16 @@ class BooksApp extends Component {
   }
 
   render() {
-    const shelves = [
-      'Currently Reading',
-      'Want to Read',
-      'Read'
-    ];
-
     return (
       <div className="app">
         {this.state.showSearchPage ? (
-          <SearchBooks onCloseSearch={ this.updateShowSearchPage } />
+          <SearchBooks onCloseSearch={ this.updateShowSearchPage } books={ this.state.books }/>
         ) : (
-          <div className="list-books">
-            <div className="list-books-title">
-              <h1>MyReads</h1>
-            </div>
-            <div className="list-books-content">
-              <div>
-                { shelves.map( shelf => (
-                  <BookShelf key={ shelf }
-                             title={ shelf }
-                             books={ filterBooksByShelf.call(this, shelf) }
-                  />
-                )) }
-              </div>
-            </div>
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-            </div>
-          </div>
+          <ListBooks onOpenSearch={ this.updateShowSearchPage } books={ this.state.books } />
         )}
       </div>
     )
   }
-}
-
-function filterBooksByShelf(shelf) {
-  return this.state.books.filter(book => book.shelf === shelf);
 }
 
 export default BooksApp
