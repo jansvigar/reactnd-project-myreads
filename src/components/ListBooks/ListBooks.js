@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import BookShelf from '../BookShelf/BookShelf'
 import './ListBooks.css'
 
@@ -26,15 +27,14 @@ const ListBooks = props => {
         </div>
       </div>
       <div className="open-search">
-        <a onClick={() => props.onOpenSearch(true)}>Add a book</a>
+        <Link to="/search">Add a book</Link>
       </div>
     </div>
   )
 }
 
 ListBooks.propTypes = {
-  books: PropTypes.array.isRequired,
-  onOpenSearch: PropTypes.func.isRequired
+  books: PropTypes.array.isRequired
 }
 
 function camelCase(str) {
