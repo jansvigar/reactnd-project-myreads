@@ -1,29 +1,58 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import BooksGrid from '../BooksGrid/BooksGrid'
-import './SearchBooks.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import * as BooksAPI from '../../BooksAPI';
+import BooksGrid from '../BooksGrid/BooksGrid';
+import SearchBox from './SearchBox';
+import './SearchBooks.css';
 
 class SearchBooks extends Component {
+  state = {
+    books: []
+  };
+
+  handleSearch = (query) => {
+    BooksAPI.search(query).then(books => {
+      if(!books.error) {
+        let uniqueBooks = removeDuplicates(books, 'id');
+        this.setState({ books: uniqueBooks });
+      }
+    });
+  };
+
+  clearBooks = () => {
+    this.setState({ books: [] });
+  }
+
   render() {
     return (
         <div className="search-books">
         <div className="search-books-bar">
           <Link className="close-search" to="/">Close</Link>
           <div className="search-books-input-wrapper">
-            <input type="text" placeholder="Search by title or author"/>
+            <SearchBox
+              handleSearch={ this.handleSearch }
+              onClearSearch={ this.clearBooks }
+            />
           </div>
         </div>
         <div className="search-books-results">
-          <BooksGrid />
+          { this.state.books.length > 0 &&
+            <BooksGrid books={ this.state.books } />
+          }
         </div>
       </div>
-    )
-  }
+    );
+  };
 }
 
-SearchBooks.propTypes = {
-  books: PropTypes.array.isRequired
+function removeDuplicates(arr, prop) {
+  let mappedArr = arr.map(mappedObj => mappedObj[prop]);
+
+  let uniq = arr.filter((element, index, array) => {
+    return mappedArr.indexOf(element[prop]) === index;
+  });
+
+  return uniq;
 }
 
-export default SearchBooks
+export default SearchBooks;

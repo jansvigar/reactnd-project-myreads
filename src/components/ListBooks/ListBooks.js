@@ -1,40 +1,50 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import BookShelf from '../BookShelf/BookShelf'
-import './ListBooks.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import * as BooksAPI from '../../BooksAPI';
+import BookShelf from '../BookShelf/BookShelf';
+import './ListBooks.css';
 
-const ListBooks = props => {
-  const shelves = [
-    'Currently Reading',
-    'Want to Read',
-    'Read'
-  ];
+const shelves = [
+  'Currently Reading',
+  'Want to Read',
+  'Read'
+];
 
-  return (
-    <div className="list-books">
-      <div className="list-books-title">
-        <h1>MyReads</h1>
-      </div>
-      <div className="list-books-content">
-        <div>
-          { shelves.map( shelf => (
-            <BookShelf key={ shelf }
-                       title={ shelf }
-                       books={ props.books.filter(book => book.shelf === camelCase(shelf)) }
-            />
-          )) }
+class ListBooks extends Component {
+  state = {
+    books: []
+  };
+
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books });
+    });
+  };
+
+  render() {
+    return (
+      <div className="list-books">
+          <div className="list-books-title">
+            <h1>MyReads</h1>
+          </div>
+          <div className="list-books-content">
+            <div>
+              { shelves.map( shelf => (
+                <BookShelf key={ shelf }
+                           title={ shelf }
+                           books={ this.state.books.filter(book =>
+                             book.shelf === camelCase(shelf))
+                           }
+                />
+              )) }
+            </div>
+          </div>
+          <div className="open-search">
+            <Link to="/search">Add a book</Link>
+          </div>
         </div>
-      </div>
-      <div className="open-search">
-        <Link to="/search">Add a book</Link>
-      </div>
-    </div>
-  )
-}
-
-ListBooks.propTypes = {
-  books: PropTypes.array.isRequired
+      );
+  };
 }
 
 function camelCase(str) {
@@ -45,4 +55,4 @@ function camelCase(str) {
             });
 }
 
-export default ListBooks
+export default ListBooks;

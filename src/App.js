@@ -1,32 +1,21 @@
 import React, { Component } from 'react';
-import * as BooksAPI from './BooksAPI';
 import { Route } from 'react-router-dom';
 import './App.css';
 import SearchBooks from './components/SearchBooks/SearchBooks';
 import ListBooks from './components/ListBooks/ListBooks';
 
 class BooksApp extends Component {
-  state = {
-    books: []
-  };
-
-  componentDidMount() {
-    BooksAPI.getAll().then((books) => {
-      this.setState({ books });
-    });
-  };
-
   render() {
     return (
       <div className="app">
         <Route exact path="/" render={() => (
-          <ListBooks books={ this.state.books } />
+          <ListBooks />
         )} />
         <Route path="/search" render={() => (
-          <SearchBooks books={ this.state.books }/>
+          <SearchBooks />
         )} />
       </div>
-    )
+    );
   };
 }
 
