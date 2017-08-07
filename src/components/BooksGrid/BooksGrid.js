@@ -13,11 +13,12 @@ const BooksGrid = props => {
     <ol className="books-grid">
     {
         props.books.map( book => (
+          <li key={ book.id }>
             <Book
-              key={ book.id }
               book={ book }
               updateShelvedBooksList={ updateShelvedBooksList }
             />
+          </li>
         ))
     }
     </ol>
