@@ -9,14 +9,14 @@ class SearchBox extends Component {
   componentWillMount() {
     this.handleSearchDebounced = debounce(() => {
       this.props.handleSearch(this.state.query);
-    }, 1000);
+    }, 500);
   };
 
   updateQuery = (query) => {
     this.setState({ query });
   }
 
-  onChange = (e) => {
+  handleOnChange = (e) => {
     let inputValue = e.target.value;
     this.props.onClearSearch();
     this.updateQuery(inputValue);
@@ -33,7 +33,7 @@ class SearchBox extends Component {
       <input type="text"
           placeholder="Search by title or author"
           value={ this.state.query }
-          onChange={ this.onChange }
+          onChange={ this.handleOnChange }
       />
     );
   };

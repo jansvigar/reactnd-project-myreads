@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../../BooksAPI';
 import BookShelf from '../BookShelf/BookShelf';
+import * as Constants from '../../constants'
+import { camelCase } from '../../utils'
 import './ListBooks.css';
-
-const shelves = [
-  'Currently Reading',
-  'Want to Read',
-  'Read'
-];
 
 class ListBooks extends Component {
   state = {
@@ -16,10 +12,14 @@ class ListBooks extends Component {
   };
 
   componentDidMount() {
+    this.updateShelvedBooksList();
+  };
+
+  updateShelvedBooksList = () => {
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
     });
-  };
+  }
 
   render() {
     return (
@@ -29,12 +29,13 @@ class ListBooks extends Component {
           </div>
           <div className="list-books-content">
             <div>
-              { shelves.map( shelf => (
+              { Constants.SHELVES.map( shelf => (
                 <BookShelf key={ shelf }
                            title={ shelf }
                            books={ this.state.books.filter(book =>
                              book.shelf === camelCase(shelf))
                            }
+                           updateShelvedBooksList={ this.updateShelvedBooksList }
                 />
               )) }
             </div>
@@ -45,14 +46,6 @@ class ListBooks extends Component {
         </div>
       );
   };
-}
-
-function camelCase(str) {
-  return str.trim()
-            .toLowerCase()
-            .replace(/\W+(.)/g, function(match, char){
-              return char.toUpperCase();
-            });
 }
 
 export default ListBooks;

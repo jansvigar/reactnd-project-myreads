@@ -1,42 +1,69 @@
-import React from 'react';
+import React, { Component } from 'react';
 import BookShelfChanger from './BookShelfChanger';
 import PropTypes from 'prop-types';
+import * as BooksAPI from '../../BooksAPI';
 import './Book.css';
 
-const Book = props => {
-  const { book :
-            {
-              imageLinks : { thumbnail } = {},
-              title = 'Unknown Title',
-              authors = ['Unknown Author']
-            } = {}
-        } = props;
-
-  const bookCoverStyles = {
-    width: 128,
-    height: 193,
-    backgroundImage: `url(${thumbnail})`
+class Book extends Component {
+  state = {
+      shelf: ''
   };
 
-  return (
-    <div className="book">
-      <div className="book-top">
-        <div className="book-cover" style={ bookCoverStyles }></div>
-        <BookShelfChanger />
+  componentWillMount() {
+    if(this.props.book.shelf) {
+      this.setState({ shelf: this.props.book.shelf });
+    } else {
+      BooksAPI
+        .get(this.props.book.id)
+        .then(book =>
+          this.setState({ shelf: book.shelf })
+        );
+    }
+  };
+
+  handleOnChange = (selectedValue) => {;
+    BooksAPI.update(this.props.book, selectedValue).then((data) => {
+      this.setState({ shelf: selectedValue });
+      this.props.updateShelvedBooksList
+        && this.props.updateShelvedBooksList();
+    });
+  }
+
+  render(){
+    const bookCoverStyles = {
+      width: 128,
+      height: 193,
+      backgroundImage: `url(${this.props.book.imageLinks
+                              && this.props.book.imageLinks.thumbnail})`
+    };
+
+    return (
+      <div className="book">
+        <div className="book-top">
+          <div className="book-cover" style={ bookCoverStyles }></div>
+          <BookShelfChanger
+            selectedShelf={ this.state.shelf }
+            handleOnChange={ this.handleOnChange }
+          />
+        </div>
+        <div className="book-title">{ this.props.book.title || 'Unknown Title' }</div>
+        <div className="book-authors">
+          { this.props.book.authors && this.props.book.authors.length > 0
+              ? this.props.book.authors.reduce((acc, cur) => `${acc}, ${cur}`)
+              : 'Unknown Author' }
+        </div>
       </div>
-      <div className="book-title">{ title }</div>
-      <div className="book-authors">
-        { authors.reduce((acc, cur) => `${acc}, ${cur}`) }
-      </div>
-    </div>
-  );
-};
+    );
+  };
+}
 
 Book.propTypes = {
   book: PropTypes.shape ({
+    id: PropTypes.string.isRequired,
     imageLinks: PropTypes.object,
     title: PropTypes.string,
-    authors: PropTypes.array
+    authors: PropTypes.array,
+    shelf: PropTypes.string
   })
 };
 
