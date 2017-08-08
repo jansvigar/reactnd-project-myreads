@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BookShelfChanger from './BookShelfChanger';
 import PropTypes from 'prop-types';
+import Rating from '../Rating/Rating'
 import * as BooksAPI from '../../BooksAPI';
 import './Book.css';
 
@@ -46,6 +47,9 @@ class Book extends Component {
             handleOnChange={ this.handleOnChange }
           />
         </div>
+        <div className="book-rating">
+          <Rating number={ this.props.book.averageRating } />
+        </div>
         <div className="book-title">{ this.props.book.title || 'Unknown Title' }</div>
         <div className="book-authors">
           { this.props.book.authors && this.props.book.authors.length > 0
@@ -63,6 +67,7 @@ Book.propTypes = {
     imageLinks: PropTypes.object,
     title: PropTypes.string,
     authors: PropTypes.array,
+    averageRating: PropTypes.number,
     shelf: PropTypes.string
   })
 };

@@ -17,6 +17,7 @@ class ListBooks extends Component {
 
   updateShelvedBooksList = () => {
     BooksAPI.getAll().then((books) => {
+      console.log(books);
       this.setState({ books });
     });
   }

@@ -5,9 +5,11 @@
 .book-authors {
   font-size: 0.8em;
 }
-.book-title {
+
+.book-rating {
   margin-top: 10px;
 }
+
 .book-authors {
   color: #999;
 }
