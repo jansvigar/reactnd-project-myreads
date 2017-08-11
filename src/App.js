@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import SearchBooks from './components/SearchBooks/SearchBooks';
 import ListBooks from './components/ListBooks/ListBooks';
 
-class BooksApp extends Component {
-  render() {
-    return (
+const BooksApp = () => (
       <div className="app">
         <Route exact path="/" render={() => (
           <ListBooks />
@@ -15,8 +13,6 @@ class BooksApp extends Component {
           <SearchBooks />
         )} />
       </div>
-    );
-  };
-}
+);
 
 export default BooksApp;

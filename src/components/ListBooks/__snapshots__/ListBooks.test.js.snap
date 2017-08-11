@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListBooks /> should render correctly 1`] = `
+<div
+  className="list-books"
+>
+  <div
+    className="list-books-title"
+  >
+    <h1>
+      MyReads
+    </h1>
+  </div>
+  <div
+    className="list-books-content"
+  >
+    <div>
+      <BookShelf
+        books={Array []}
+        title="Currently Reading"
+        updateShelvedBooksList={[Function]}
+      />
+      <BookShelf
+        books={Array []}
+        title="Want to Read"
+        updateShelvedBooksList={[Function]}
+      />
+      <BookShelf
+        books={Array []}
+        title="Read"
+        updateShelvedBooksList={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="open-search"
+  >
+    <Link
+      replace={false}
+      to="/search"
+    >
+      Add a book
+    </Link>
+  </div>
+</div>
+`;

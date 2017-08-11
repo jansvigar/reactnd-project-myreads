@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookShelf /> should render correctly 1`] = `
+<div
+  className="bookshelf"
+>
+  <h2
+    className="bookshelf-title"
+  >
+    Book Shelf Title
+  </h2>
+  <div
+    className="bookshelf-books"
+  >
+    <BooksGrid
+      books={
+        Array [
+          Object {
+            "id": "id",
+            "shelf": "testShelf",
+          },
+        ]
+      }
+      updateShelvedBooksList={[Function]}
+    />
+  </div>
+</div>
+`;

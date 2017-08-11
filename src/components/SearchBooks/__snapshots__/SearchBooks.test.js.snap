@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBooks /> <SearchBox /> should render correctly 1`] = `
+<input
+  onChange={[Function]}
+  placeholder="Search by title or author"
+  type="text"
+  value=""
+/>
+`;
+
+exports[`<SearchBooks /> should render correctly 1`] = `
+<div
+  className="search-books"
+>
+  <div
+    className="search-books-bar"
+  >
+    <Link
+      className="close-search"
+      replace={false}
+      to="/"
+    >
+      Close
+    </Link>
+    <div
+      className="search-books-input-wrapper"
+    >
+      <SearchBox
+        handleSearch={[Function]}
+        onClearSearch={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="search-books-results"
+  />
+</div>
+`;

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Book /> <BookShelfChanger /> should render correctly 1`] = `
+<div
+  className="book-shelf-changer"
+>
+  <select
+    onChange={[Function]}
+    value="Test Shelf"
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Move to...
+    </option>
+    <option
+      value="currentlyReading"
+    >
+      Currently Reading
+    </option>
+    <option
+      value="wantToRead"
+    >
+      Want to Read
+    </option>
+    <option
+      value="read"
+    >
+      Read
+    </option>
+    <option
+      value="none"
+    >
+      None
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Book /> should render correctly 1`] = `
+<div
+  className="book"
+>
+  <div
+    className="book-top"
+  >
+    <div
+      className="book-cover"
+      style={
+        Object {
+          "backgroundImage": "url(undefined)",
+          "height": 193,
+          "width": 128,
+        }
+      }
+    />
+    <BookShelfChanger
+      handleOnChange={[Function]}
+      selectedShelf="Test Shelf"
+    />
+  </div>
+  <div
+    className="book-rating"
+  >
+    <Rating
+      number={5}
+    />
+  </div>
+  <div
+    className="book-title"
+  >
+    Test Title
+  </div>
+  <div
+    className="book-authors"
+  >
+    author 1, author 2
+  </div>
+</div>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Rating /> should render correctly 1`] = `
+<div>
+  <span>
+    <FontAwesome
+      name="star-o"
+      size="lg"
+      style={
+        Object {
+          "color": "#FFB300",
+        }
+      }
+    />
+  </span>
+  <span>
+    <FontAwesome
+      name="star-o"
+      size="lg"
+      style={
+        Object {
+          "color": "#FFB300",
+        }
+      }
+    />
+  </span>
+  <span>
+    <FontAwesome
+      name="star-o"
+      size="lg"
+      style={
+        Object {
+          "color": "#FFB300",
+        }
+      }
+    />
+  </span>
+  <span>
+    <FontAwesome
+      name="star-o"
+      size="lg"
+      style={
+        Object {
+          "color": "#FFB300",
+        }
+      }
+    />
+  </span>
+  <span>
+    <FontAwesome
+      name="star-o"
+      size="lg"
+      style={
+        Object {
+          "color": "#FFB300",
+        }
+      }
+    />
+  </span>
+</div>
+`;

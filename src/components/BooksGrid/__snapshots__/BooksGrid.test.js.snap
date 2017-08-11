@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BooksGrid /> should render correctly 1`] = `
+<ol
+  className="books-grid"
+>
+  <li>
+    <Book
+      book={
+        Object {
+          "id": "id",
+          "shelf": "testShelf",
+        }
+      }
+      updateShelvedBooksList={[Function]}
+    />
+  </li>
+</ol>
+`;

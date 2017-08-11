@@ -1,15 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import BooksGrid from './BooksGrid';
+import Rating from './Rating';
 
-const props = {
-  books: [{id:'id', shelf:'testShelf'}]
-}
-
-describe('<BooksGrid />', () => {
+describe('<Rating />', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<BooksGrid {...props} />);
+    const wrapper = shallow(<Rating />);
 
     expect(toJson(wrapper)).toMatchSnapshot();
   });

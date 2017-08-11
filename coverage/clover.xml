@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1502436838768" clover="3.2.0">
+  <project timestamp="1502436838769" name="All files">
+    <metrics statements="106" coveredstatements="54" conditionals="39" coveredconditionals="14" methods="55" coveredmethods="19" elements="200" coveredelements="87" complexity="0" loc="106" ncloc="106" packages="7" files="14" classes="14">
+      <package name="src">
+        <metrics statements="35" coveredstatements="16" conditionals="6" coveredconditionals="1" methods="17" coveredmethods="3"/>
+        <file name="App.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\App.js">
+          <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+        </file>
+        <file name="BooksAPI.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\BooksAPI.js">
+          <metrics statements="20" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="11" coveredmethods="0"/>
+          <line num="2" count="6" type="stmt"/>
+          <line num="6" count="6" type="stmt"/>
+          <line num="7" count="6" type="cond" truecount="1" falsecount="1"/>
+          <line num="8" count="6" type="stmt"/>
+          <line num="10" count="6" type="stmt"/>
+          <line num="15" count="6" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="20" count="6" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="25" count="6" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="33" count="0" type="stmt"/>
+          <line num="35" count="6" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+        </file>
+        <file name="constants.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\constants.js">
+          <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="2" count="6" type="stmt"/>
+        </file>
+        <file name="index.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\index.js">
+          <metrics statements="6" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="7" count="0" type="stmt"/>
+        </file>
+        <file name="setupTests.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\setupTests.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="7" type="stmt"/>
+          <line num="7" count="7" type="stmt"/>
+        </file>
+        <file name="utils.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\utils.js">
+          <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="3" count="3" type="stmt"/>
+          <line num="6" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.Book">
+        <metrics statements="16" coveredstatements="10" conditionals="14" coveredconditionals="8" methods="9" coveredmethods="5"/>
+        <file name="Book.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\Book\Book.js">
+          <metrics statements="11" coveredstatements="6" conditionals="12" coveredconditionals="7" methods="6" coveredmethods="3"/>
+          <line num="14" count="1" type="cond" truecount="1" falsecount="1"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="34" count="1" type="stmt"/>
+          <line num="41" count="1" type="stmt"/>
+          <line num="56" count="1" type="stmt"/>
+          <line num="64" count="6" type="stmt"/>
+        </file>
+        <file name="BookShelfChanger.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\Book\BookShelfChanger.js">
+          <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="2"/>
+          <line num="6" count="6" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="15" count="3" type="stmt"/>
+          <line num="25" count="6" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.BookShelf">
+        <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <file name="BookShelf.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\BookShelf\BookShelf.js">
+          <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+          <line num="5" count="3" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="24" count="3" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.BooksGrid">
+        <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <file name="BooksGrid.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\BooksGrid\BooksGrid.js">
+          <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="2"/>
+          <line num="6" count="5" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="28" count="5" type="stmt"/>
+          <line num="32" count="5" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.ListBooks">
+        <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
+        <file name="ListBooks.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\ListBooks\ListBooks.js">
+          <metrics statements="6" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="2"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
+          <line num="33" count="3" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.Rating">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <file name="Rating.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\Rating\Rating.js">
+          <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="3" methods="2" coveredmethods="2"/>
+          <line num="6" count="7" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+          <line num="17" count="1" type="stmt"/>
+          <line num="22" count="5" type="cond" truecount="1" falsecount="1"/>
+          <line num="34" count="7" type="stmt"/>
+          <line num="38" count="7" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components.SearchBooks">
+        <metrics statements="27" coveredstatements="6" conditionals="9" coveredconditionals="2" methods="16" coveredmethods="4"/>
+        <file name="SearchBooks.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\SearchBooks\SearchBooks.js">
+          <metrics statements="10" coveredstatements="1" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="1"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="27" count="1" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="55" count="0" type="stmt"/>
+        </file>
+        <file name="SearchBox.js" path="C:\Users\jvigar\Documents\Projects\reactnd-project-myreads\src\components\SearchBooks\SearchBox.js">
+          <metrics statements="17" coveredstatements="5" conditionals="5" coveredconditionals="1" methods="9" coveredmethods="3"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="32" count="1" type="stmt"/>
+          <line num="42" count="2" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="54" count="1" type="stmt"/>
+          <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="60" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
