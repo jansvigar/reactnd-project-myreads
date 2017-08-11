@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../../BooksAPI';
+import { removeDuplicates } from '../../utils';
 import BooksGrid from '../BooksGrid/BooksGrid';
 import SearchBox from './SearchBox';
 import './SearchBooks.css';
@@ -43,16 +44,6 @@ class SearchBooks extends Component {
       </div>
     );
   };
-}
-
-function removeDuplicates(arr, prop) {
-  let mappedArr = arr.map(mappedObj => mappedObj[prop]);
-
-  let uniq = arr.filter((element, index, array) => {
-    return mappedArr.indexOf(element[prop]) === index;
-  });
-
-  return uniq;
 }
 
 export default SearchBooks;

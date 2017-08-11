@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { debounce } from '../../utils';
 
 class SearchBox extends Component {
   state = {
@@ -9,7 +10,7 @@ class SearchBox extends Component {
   componentWillMount() {
     this.handleSearchDebounced = debounce(() => {
       this.props.handleSearch(this.state.query);
-    }, 500);
+    }, 500, this);
   };
 
   updateQuery = (query) => {
@@ -42,22 +43,6 @@ class SearchBox extends Component {
 SearchBox.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   onClearSearch: PropTypes.func.isRequired
-}
-
-function debounce(callback, wait, context = this) {
-  let timeout;
-  function debounced(...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => callback.apply(context, args), wait);
-  }
-
-  debounced.cancel = () => {
-    if(timeout !== undefined) {
-      clearTimeout(timeout);
-    }
-  };
-
-  return debounced;
-}
+};
 
 export default SearchBox;
