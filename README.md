@@ -1,6 +1,12 @@
 This is Udacity React project by Jan Vigar.
 https://myreads-jvigar.herokuapp.com/
 
+## How to install and launch
+```
+npm install
+npm start
+```
+
 ## Goal
 
 The goal of this project is to correct functionality of the starter template using React. MyReads app should have these functionalities:
