@@ -32,3 +32,36 @@ export function removeDuplicates(arr, prop) {
 
   return uniq;
 }
+
+export function sort(items = []) {
+  return function (sortBy) {
+    let sortedItems = [].concat(items);
+    sortedItems.sort((a, b) => {
+      a = a[sortBy] || 0;
+      b = b[sortBy] || 0;
+      return compare(a, b);
+    });
+
+    return sortedItems;
+  }
+}
+
+function compare(a, b) {
+    const isNumber = typeof(a) === 'number' && typeof(b) === 'number';
+    const isString = typeof(a) === 'string' && typeof(b) === 'string';
+
+    if(isNumber) {
+      return a - b;
+    }
+
+    if(isString) {
+      a = a.toUpperCase();
+      b = b.toUpperCase();
+      return a < b
+               ? -1
+               : a > b
+               ? 1 : 0;
+    }
+
+    return 0;
+}
