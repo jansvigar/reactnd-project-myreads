@@ -1,4 +1,5 @@
-This is Udacity React project by Jan Vigar
+This is Udacity React project by Jan Vigar.
+https://myreads-jvigar.herokuapp.com/
 
 ## Goal
 
