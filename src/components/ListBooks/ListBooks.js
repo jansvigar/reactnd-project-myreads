@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as BooksAPI from '../../BooksAPI';
 import BookShelf from '../BookShelf/BookShelf';
-import * as Constants from '../../constants'
-import { camelCase } from '../../utils'
+import * as Constants from '../../constants';
+import { camelCase } from '../../utils';
 import './ListBooks.css';
 
 class ListBooks extends Component {
@@ -19,7 +19,7 @@ class ListBooks extends Component {
     BooksAPI.getAll().then((books) => {
       this.setState({ books });
     });
-  }
+  };
 
   render() {
     return (

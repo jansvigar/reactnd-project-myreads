@@ -22,13 +22,13 @@ class Book extends Component {
     }
   };
 
-  handleOnChange = (selectedValue) => {;
+  handleOnChange = (selectedValue) => {
     BooksAPI.update(this.props.book, selectedValue).then((data) => {
       this.setState({ shelf: selectedValue });
       this.props.updateShelvedBooksList
         && this.props.updateShelvedBooksList();
     });
-  }
+  };
 
   render(){
     const bookCoverStyles = {

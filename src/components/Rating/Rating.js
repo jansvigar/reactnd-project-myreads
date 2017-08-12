@@ -33,10 +33,10 @@ const Rating = props => {
 
 Rating.propTypes = {
   number: PropTypes.number
-}
+};
 
 Rating.defaultProps = {
   number: 0
-}
+};
 
 export default Rating;

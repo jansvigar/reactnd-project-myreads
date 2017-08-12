@@ -22,7 +22,7 @@ const BooksGrid = props => {
         ))
     }
     </ol>
-  )
+  );
 };
 
 BooksGrid.propTypes = {
