@@ -1,10 +1,13 @@
 This is Udacity React project by Jan Vigar.
 https://myreads-jvigar.herokuapp.com/
 
-## How to install and launch
+## Installation and Usage
+
+Type the following on your command line. NPM is required. You can install Node.js [here] (https://nodejs.org/en/)
 ```
-npm install
-npm start
+$ git clone https://github.com/jansvigar/reactnd-project-myreads-starter.git
+$ npm install
+$ npm start
 ```
 
 ## Goal
@@ -22,3 +25,11 @@ I added a few features on top of the project specification:
 ## Test
 
 Although this project does not require testing. I added Jest snapshot testing which is really fast and quite useful. Excited to learn more about it.
+
+## Contributing
+
+At this time, this project is not open for contribution. The purpose of this project is to complete Udacity React Course.
+
+## License
+
+This project is under the MIT License, see License.md
