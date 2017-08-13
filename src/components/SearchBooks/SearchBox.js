@@ -7,11 +7,11 @@ class SearchBox extends Component {
     query: ''
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.handleSearchDebounced = debounce(() => {
       this.props.handleSearch(this.state.query);
     }, 500, this);
-  };
+  }
 
   updateQuery = (query) => {
     this.setState({ query });

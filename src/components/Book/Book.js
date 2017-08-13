@@ -10,7 +10,7 @@ class Book extends Component {
       shelf: ''
   };
 
-  componentWillMount() {
+  componentDidMount() {
     if(this.props.book.shelf) {
       this.setState({ shelf: this.props.book.shelf });
     } else {
