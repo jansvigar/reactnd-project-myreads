@@ -5,7 +5,7 @@ https://myreads-jvigar.herokuapp.com/
 
 Type the following on your command line. NPM is required. You can install Node.js [here] (https://nodejs.org/en/)
 ```
-$ git clone https://github.com/jansvigar/reactnd-project-myreads-starter.git
+$ git clone https://github.com/jansvigar/reactnd-project-myreads.git
 $ npm install
 $ npm start
 ```
